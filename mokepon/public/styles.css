@@ -1,0 +1,175 @@
+/*Escogemos la etiqueta que queremos estilizar y le damos el color que queremos, un vinculo entre CSS y HTML, se conoce como 
+*SELECTORES: 
+*TIPO. -> sintaxis nombreEtiqueta h1{},body{}*
+*CLASE(CREAR ATRIBUTOS) -> sintaxis .nombreClase{}. 
+*ID -> sintaxis #nombreId{}*/
+/*Sintaxis vinculo{propiedades -> valores} 
+*PROPIEDADES: caracteristicas que le podemos dar a los elementos de HTML: COLOR tamaño
+*VALORES: cada uno de esas propiedad o caracteristicas. tipo de color, medidda en pixeles que quiera dar*/
+
+@import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Fontdiner+Swanky&display=swap");
+
+body {
+  /*selector por TIPO*/
+  font-family: "Fontdiner Swanky", cursive;
+  background-color: #176b87;
+}
+#seleccionar-mascota {
+  /*selector por ID*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} /*Al ser el padre en la etiqueta section usamos el display:flex, hay un propiedad flex direction que tiene un valor por defecto row*/
+/*SELECTOR DE CALSE*/
+.titulo {
+  /*selector por Clase*/
+  color: white;
+  font-size: 60px; /*manejar multiplos de 4 en el tamaño de las fuentes*/
+} /*Selector de tipo clase, en la etiqueta HTML le damos un atributo de tipo class para llamarlo desde el CSS y darle propiedades.
+*Sintaxis usamos .nombreClas*/
+.subtitulo {
+  color: white;
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.tarjetas,
+.tarjetas-ataques {
+  display: flex;
+  gap: 10px;
+}
+.tarjeta-de-mokepon {
+  width: 110px;
+  height: 100px;
+  background: linear-gradient(180deg, #64ccc5, transparent);
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: white;
+}
+.tarjeta-de-mokepon img {
+  /*Toma la imagen que esta dentro de la clase tarjeta-de-mokepon para ser manipulada*/
+  width: 80px;
+}
+#boton-mascota {
+  width: 180px;
+  height: 90px;
+  background: linear-gradient(180deg, #eb6440, #176b87);
+  padding: 5px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  border: 1px solid #d23a10;
+  border-radius: 10px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 30px;
+  color: white;
+}
+input {
+  display: none;
+}
+input:checked + label {
+  /* para cambiar el color al tomar una eleccion de tarjeta */
+  /* Con el "+" podemos seleccionar un hermano dela propiedad en este caso es el label el que esta inmeditamente despues del input*/
+  background: linear-gradient(0deg, #eb6440, #176b87);
+}
+#seleccionar-ataque {
+  /*display: flex; no hace uso de este flex porque lo esta tomando directamente del JavaScript*/
+  flex-direction: column;
+  align-items: center;
+}
+.boton-de-ataque {
+  background: linear-gradient(0deg, #eb6440, #176b87);
+  border: 1px solid;
+  border-color: #d23a10;
+  border-radius: 5px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.boton-de-ataque:checked {
+  background-color: pink;
+}
+/* .texto-boton {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  color: white;
+} */
+#mensajes {
+  width: 280px;
+  background: linear-gradient(0deg, #64ccc5, #176b87);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#boton-reiniciar {
+  border: 1px solid #64ccc5;
+  background-color: #eb6440;
+  display: flex;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 20px;
+  color: white;
+}
+.ataques {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  color: white;
+}
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+.ataques-jugador,
+.ataques-enemigo {
+  /*se usa la div como padre de los items dentro de el*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: inherit;
+  background: linear-gradient(0deg, #eb6440, #176b87);
+}
+#ver-mapa{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#ver-mapa button{
+  width: 80px;
+  height: 90px;
+  background: linear-gradient(180deg, #eb6440, #176b87);
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 10px;
+  border: 1px solid #d23a10;
+  border-radius: 10px;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 30px;
+  color: white;
+}
+@media (max-width: 560px) {
+  /*hacienod uso del @media podemos realizar el uso de responsive dentro del parentesis se coloca hasta donde va el valor que vamos a usar*/
+  .tarjetas,
+  .tarjetas-ataques {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 300px) {
+  #ver-mapa div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
